@@ -2,288 +2,845 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nguyen Huy Hoang - Portfolio</title>
-  <!-- Use Tailwind CDN for immediate styling without rebuild -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyen Huy Hoang · Software Engineer</title>
+  <meta name="description"
+    content="Nguyen Huy Hoang is a Software Engineer specializing in scalable enterprise systems, backend architecture with Go and Spring Boot, and modular frontend with Angular.">
+
+  <!-- Early i18n setup to prevent flash of wrong language (FOWL) -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('portfolio_lang') ||
+          (navigator.language && navigator.language.toLowerCase().startsWith('vi') ? 'vi' : 'en');
+        document.documentElement.lang = saved;
+        document.documentElement.setAttribute('data-lang', saved);
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Google Fonts: Unbounded (Display) and Onest (Body) as dealt in direction -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Onest:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#4f46e5', // Indigo 600
-            secondary: '#64748b', // Slate 500
+            canvas: '#fafaf9',
+            ink: '#0f172a',
+            surface: '#f1f5f9',
+            subtle: '#64748b',
+            accent: '#1d4ed8',
+          },
+          fontFamily: {
+            display: ['Unbounded', 'system-ui', 'sans-serif'],
+            body: ['Onest', 'system-ui', 'sans-serif'],
           }
         }
       }
     }
   </script>
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Custom tweaks */
+    :root {
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --t-press: 140ms;
+      --t-hover: 180ms;
+      --t-ui: 240ms;
+    }
+
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: 'Onest', system-ui, -apple-system, sans-serif;
+      background-color: #fafaf9;
+      color: #0f172a;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Headline Masked Rise on load */
+    .line-mask {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 0.12em;
+      margin-bottom: -0.12em;
+    }
+
+    .line-rise {
+      display: block;
+      transform: translateY(110%);
+      animation: lineUp 850ms var(--ease-expo) forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 100ms;
+    }
+
+    .delay-2 {
+      animation-delay: 240ms;
+    }
+
+    @keyframes lineUp {
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    /* Avatar shutter opening */
+    .shutter-stage {
+      overflow: hidden;
+      clip-path: inset(0 0 100% 0);
+      animation: shutterOpen 1000ms var(--ease-expo) 150ms forwards;
+    }
+
+    .shutter-stage img {
+      transform: scale(1.1);
+      animation: shutterScale 1100ms var(--ease-expo) 150ms forwards;
+    }
+
+    @keyframes shutterOpen {
+      to {
+        clip-path: inset(0);
+      }
+    }
+
+    @keyframes shutterScale {
+      to {
+        transform: scale(1);
+      }
+    }
+
+    /* Scroll reveal for sections */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms var(--ease-out), transform 850ms var(--ease-expo);
+    }
+
+    [data-reveal].is-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Tactile button feedback */
+    .btn-press {
+      transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease, color var(--t-hover) ease;
+    }
+
+    .btn-press:active {
+      transform: scale(0.97);
+    }
+
+    /* Accessibility: Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .line-rise {
+        transform: none;
+        animation: none;
+      }
+
+      .shutter-stage {
+        clip-path: none;
+        animation: none;
+      }
+
+      .shutter-stage img {
+        transform: none;
+        animation: none;
+      }
+
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
     }
   </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 leading-relaxed">
+<body class="bg-[#fafaf9] text-slate-900 selection:bg-slate-900 selection:text-white">
 
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-slate-200 z-50">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="font-bold text-xl tracking-tight text-slate-900">HNOGA</a>
-      <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-        <a href="#about" class="hover:text-primary transition-colors">About</a>
-        <a href="#education" class="hover:text-primary transition-colors">Education</a>
-        <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
-        <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
-        <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress"
+    class="fixed top-0 left-0 right-0 h-[2px] bg-slate-900 origin-left scale-x-0 z-50 transition-transform duration-75">
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="fixed top-0 w-full bg-[#fafaf9] z-40">
+    <div class="w-full max-w-5xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="#" class="font-extrabold text-xl tracking-tight text-slate-900"
+        style="font-family: 'Unbounded', sans-serif;">
+        HNOGA
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-7 text-base font-medium text-slate-600">
+        <a href="#about" data-i18n="nav.about" class="hover:text-slate-900 transition-colors">About</a>
+        <a href="#experience" data-i18n="nav.experience" class="hover:text-slate-900 transition-colors">Experience</a>
+        <a href="#skills" data-i18n="nav.skills" class="hover:text-slate-900 transition-colors">Skills</a>
+        <a href="#projects" data-i18n="nav.projects" class="hover:text-slate-900 transition-colors">Projects</a>
+
+        <!-- Language Switcher Pill (Desktop) -->
+        <div class="lang-switcher inline-flex items-center p-0.5 bg-slate-200/90 rounded-lg text-xs tracking-wider"
+          role="group" aria-label="Language selection">
+          <button type="button" data-lang-target="en"
+            class="lang-btn px-2.5 py-1 rounded-md transition-all duration-150 btn-press bg-slate-900 text-white shadow-sm font-semibold"
+            aria-pressed="true">
+            EN
+          </button>
+          <button type="button" data-lang-target="vi"
+            class="lang-btn px-2.5 py-1 rounded-md transition-all duration-150 btn-press text-slate-600 hover:text-slate-900 font-medium"
+            aria-pressed="false">
+            VI
+          </button>
+        </div>
+
+        <a href="./NguyenHuyHoang_CV_Oct_24.pdf" target="_blank" data-i18n="nav.resume"
+          data-i18n-attr="href:nav.resume_link"
+          class="px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 btn-press text-base font-semibold">
+          Resume PDF
+        </a>
       </div>
+
+      <!-- Mobile Actions (Switcher & Hamburger) -->
+      <div class="flex items-center gap-3 md:hidden">
+        <!-- Language Switcher Pill (Mobile Header) -->
+        <div class="lang-switcher inline-flex items-center p-0.5 bg-slate-200/90 rounded-lg text-xs tracking-wider"
+          role="group" aria-label="Language selection">
+          <button type="button" data-lang-target="en"
+            class="lang-btn px-2.5 py-1 rounded-md transition-all duration-150 btn-press bg-slate-900 text-white shadow-sm font-semibold"
+            aria-pressed="true">
+            EN
+          </button>
+          <button type="button" data-lang-target="vi"
+            class="lang-btn px-2.5 py-1 rounded-md transition-all duration-150 btn-press text-slate-600 hover:text-slate-900 font-medium"
+            aria-pressed="false">
+            VI
+          </button>
+        </div>
+
+        <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu"
+          class="p-2 text-slate-700 hover:text-slate-900">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu"
+      class="hidden md:hidden w-full max-w-5xl mx-auto px-6 py-4 bg-[#fafaf9] space-y-3 text-base font-medium text-slate-700">
+      <a href="#about" data-i18n="nav.about" class="block py-1 hover:text-slate-900">About</a>
+      <a href="#experience" data-i18n="nav.experience" class="block py-1 hover:text-slate-900">Experience</a>
+      <a href="#skills" data-i18n="nav.skills" class="block py-1 hover:text-slate-900">Skills</a>
+      <a href="#projects" data-i18n="nav.projects" class="block py-1 hover:text-slate-900">Projects</a>
+      <a href="./NguyenHuyHoang_CV_Oct_24.pdf" target="_blank" data-i18n="nav.resume"
+        data-i18n-attr="href:nav.resume_link" class="block py-2 text-slate-900 font-semibold">Resume PDF</a>
     </div>
   </nav>
 
-  <main class="max-w-4xl mx-auto px-6 pt-32 pb-20">
+  <main class="w-full max-w-5xl mx-auto px-6 pt-24 md:pt-32 pb-24">
 
-    <!-- PCB: Hero Section -->
-    <section id="about" class="mb-20 flex flex-col-reverse md:flex-row items-center md:items-start gap-10">
-      <div class="flex-1 text-center md:text-left">
-        <p class="text-primary font-medium tracking-wide mb-2">Hello, I'm</p>
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-slate-900">Nguyen Huy Hoang</h1>
-        <h2 class="text-2xl text-slate-600 mb-6 bg-clip-text">Software Engineer</h2>
+    <!-- Hero Section: The Name as a Monument -->
+    <section id="about" class="w-full pt-4 md:pt-8 pb-16">
 
-        <p class="text-slate-600 mb-8 leading-loose text-lg">
-          Software Engineer specializing in full-stack development with <span
-            class="font-semibold text-slate-800">Angular, Spring Boot, and Go</span>.
-          Focused on building scalable enterprise systems and performance-optimized web applications.
+      <div class="w-full flex flex-col-reverse lg:flex-row items-start justify-between gap-10">
+
+        <div class="flex-1 w-full">
+          <!-- Main Display Heading: focal point at display scale (5.8vw on desktop, exactly 2 lines on all screens) -->
+          <h1
+            class="text-4xl sm:text-5xl md:text-5xl lg:text-[84px] font-extrabold tracking-tight text-slate-950 uppercase leading-none mb-6"
+            style="font-family: 'Unbounded', sans-serif;">
+            <span class="line-mask"><span class="line-rise delay-1" data-i18n="hero.first_name">Nguyen</span></span>
+            <span class="line-mask"><span class="line-rise delay-2" data-i18n="hero.last_name">Huy Hoang</span></span>
+          </h1>
+
+          <p class="text-xl font-medium text-slate-700 mb-6 leading-snug" data-i18n="hero.tagline">
+            Software Engineer specializing in scalable enterprise systems, distributed backend services, and
+            high-performance web applications.
+          </p>
+
+          <!-- Action Buttons: directly on first screen on mobile, tablet, and desktop -->
+          <div class="w-full flex flex-wrap items-center gap-4 mb-8">
+            <a href="https://github.com/hnoga-n" target="_blank"
+              class="flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 btn-press text-base font-semibold">
+              <i class="fab fa-github"></i> <span data-i18n="hero.btn_github">GitHub Profile</span>
+            </a>
+            <a href="mailto:hoanghuynguyen711@gmail.com"
+              class="flex items-center gap-2 px-6 py-3 bg-slate-200 text-slate-900 rounded-lg hover:bg-slate-300 btn-press text-base font-semibold">
+              <i class="far fa-envelope"></i> <span data-i18n="hero.btn_email">Send Email</span>
+            </a>
+            <a href="tel:0961814002"
+              class="flex items-center gap-2 px-6 py-3 bg-slate-200 text-slate-900 rounded-lg hover:bg-slate-300 btn-press text-base font-semibold">
+              <i class="fas fa-phone"></i> <span data-i18n="hero.btn_phone">0961 814 002</span>
+            </a>
+          </div>
+
+          <p class="text-slate-600 text-base leading-relaxed" data-i18n="hero.bio">
+            Proficient in Go,ASP NET core and Angular. Experienced in architecting scalable database schemas,
+            implementing secure authorization models, and optimizing high-throughput queries for mission-critical
+            workflows.
+          </p>
+        </div>
+
+        <!-- Avatar Shutter Showcase -->
+        <div
+          class="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 shrink-0 shutter-stage rounded-2xl bg-slate-100 self-center lg:self-start">
+          <img src="./assets/img/avatar.jpg" alt="Nguyen Huy Hoang - Software Engineer"
+            class="w-full h-full object-cover rounded-2xl" fetchpriority="high">
+        </div>
+
+      </div>
+
+      <!-- Quick Facts Strip -->
+      <div class="w-full mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6" data-reveal>
+        <div class="w-full bg-slate-100/80 p-5 rounded-xl flex justify-between items-center">
+          <div>
+            <p class="text-[13px] text-slate-600 font-semibold mb-1" data-i18n="hero.fact_focus_label">Focus</p>
+            <p class="text-base font-bold text-slate-900" data-i18n="hero.fact_focus_value">Enterprise Systems</p>
+          </div>
+          <i class="fas fa-server text-slate-400"></i>
+        </div>
+        <div class="w-full bg-slate-100/80 p-5 rounded-xl flex justify-between items-center">
+          <div>
+            <p class="text-[13px] text-slate-600 font-semibold mb-1" data-i18n="hero.fact_location_label">Location</p>
+            <p class="text-base font-bold text-slate-900" data-i18n="hero.fact_location_value">Ho Chi Minh City</p>
+          </div>
+          <i class="fas fa-location-dot text-slate-400"></i>
+        </div>
+        <div class="w-full bg-slate-100/80 p-5 rounded-xl flex justify-between items-center">
+          <div>
+            <p class="text-[13px] text-slate-600 font-semibold mb-1" data-i18n="hero.fact_status_label">Current Status
+            </p>
+            <p class="text-base font-bold text-slate-900" data-i18n="hero.fact_status_value">Open To Work</p>
+          </div>
+          <i class="fas fa-briefcase text-slate-400"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll Ink-Fill Statement Section -->
+    <section class="w-full py-16" data-reveal>
+      <div class="w-full bg-slate-900 text-white rounded-3xl p-8 sm:p-12 lg:p-16">
+        <div class="w-full flex justify-between items-center mb-6">
+          <span class="text-[13px] font-bold text-slate-400 uppercase" data-i18n="philosophy.badge_left">Core
+            Philosophy</span>
+          <span class="text-[13px] text-slate-400 font-medium text-right" data-i18n="philosophy.badge_right">Engineering
+            Standard</span>
+        </div>
+        <p id="ink-statement" class="text-xl font-medium tracking-tight leading-relaxed max-w-3xl">
+          Building resilient backend architectures, high-concurrency microservices, and modular web applications that
+          solve real-world enterprise demands.
         </p>
+      </div>
+    </section>
 
-        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-          <a href="https://github.com/hnoga-n" target="_blank"
-            class="flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all font-medium">
-            <i class="fab fa-github"></i> GitHub
-          </a>
+    <!-- Experience & Education Section -->
+    <section id="experience" class="w-full py-16" data-reveal>
+
+      <!-- Top Section Marker -->
+      <div class="w-full flex justify-between items-baseline mb-8">
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" style="font-family: 'Unbounded', sans-serif;"
+          data-i18n="experience.section_title">
+          Career Path
+        </h2>
+        <span class="text-[13px] text-slate-500 font-medium text-right" data-i18n="experience.section_years">2021 –
+          2026</span>
+      </div>
+
+      <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+
+        <!-- Left Subtitle Column -->
+        <div class="lg:col-span-4 w-full">
+          <p class="text-slate-600 text-base leading-relaxed lg:sticky lg:top-28" data-i18n="experience.section_desc">
+            Professional milestones, engineering background, and academic qualifications achieved across industry and
+            university.
+          </p>
+        </div>
+
+        <!-- Right Content Column -->
+        <div class="lg:col-span-8 w-full space-y-8">
+
+          <!-- Experience Item -->
+          <div class="w-full bg-slate-100/80 p-6 sm:p-8 rounded-2xl">
+            <div class="flex items-center justify-between gap-2 mb-3 w-full">
+              <h3 class="text-xl font-bold text-slate-900" data-i18n="experience.job1_title">Software Engineer</h3>
+              <span class="text-base font-semibold text-slate-600 bg-white px-3 py-1 rounded-md shrink-0"
+                data-i18n="experience.job1_time">
+                Jun 2025 – May 2026
+              </span>
+            </div>
+            <p class="text-base font-semibold text-slate-800 mb-4" data-i18n="experience.job1_company">FTI Joint Stock
+              Co.</p>
+            <ul class="space-y-3 text-slate-700 text-base list-disc list-inside">
+              <li data-i18n="experience.job1_b1">Developed and maintained full-stack web application features using
+                Angular, TypeScript, ASP.NET Core,
+                Golang, and SQL Server; designed RESTful Web APIs and reusable frontend components to support business
+                workflows and improve usability and maintainability.</li>
+              <li data-i18n="experience.job1_b2">Optimized database queries, indexing, and Redis caching strategies to
+                support high-volume user requests and large datasets. Troubleshot and debugged production issues,
+                improving system performance and reliability.</li>
+              <li data-i18n="experience.job1_b3">Collaborated with Business Analysts, QA, DevOps, and other developers
+                in Agile/Scrum ceremonies to
+                clarify requirements, conduct code reviews, and troubleshoot production issues.
+              </li>
+              <li data-i18n="experience.job1_b4">Wrote unit tests and supported integration testing to ensure coding
+                standards and deliver optimized, maintainable solutions.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience Item -->
+          <div class="w-full bg-slate-100/80 p-6 sm:p-8 rounded-2xl">
+            <div class="flex items-center justify-between gap-2 mb-3 w-full">
+              <h3 class="text-xl font-bold text-slate-900" data-i18n="experience.job2_title">Intern Software Engineer
+              </h3>
+              <span class="text-base font-semibold text-slate-600 bg-white px-3 py-1 rounded-md shrink-0"
+                data-i18n="experience.job2_time">
+                Feb 2025 – April 2025
+              </span>
+            </div>
+            <p class="text-base font-semibold text-slate-800 mb-4" data-i18n="experience.job2_company">ECLO Co., Ltd</p>
+            <ul class="space-y-3 text-slate-700 text-base list-disc list-inside">
+              <li data-i18n="experience.job2_b1">Built CMS web application modules with JavaScript, HTML, and CSS,
+                enabling non-technical users to
+                manage website
+                layout and content independently, reducing developer dependency for routine changes.</li>
+              <li data-i18n="experience.job2_b2">Collaborated with team members to clarify project requirements,
+                identify suitable technical solutions,
+                and improve
+                delivery efficiency</li>
+            </ul>
+          </div>
+
+          <!-- Education Item -->
+          <div class="w-full bg-slate-100/80 p-6 sm:p-8 rounded-2xl">
+            <div class="flex items-center justify-between gap-2 mb-3 w-full">
+              <h3 class="text-xl font-bold text-slate-900" data-i18n="experience.edu_school">Sai Gon University</h3>
+              <span class="text-base font-semibold text-slate-600 bg-white px-3 py-1 rounded-md shrink-0"
+                data-i18n="experience.edu_time">
+                Sep 2021 – Jan 2026
+              </span>
+            </div>
+            <p class="text-base text-slate-800 font-medium mb-4" data-i18n="experience.edu_degree">Bachelor of
+              Engineering in Information Technology</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 w-full">
+              <div class="bg-white p-4 rounded-xl flex justify-between items-center w-full">
+                <div>
+                  <span class="block text-[13px] font-semibold text-slate-600 mb-1"
+                    data-i18n="experience.edu_gpa_label">Cumulative GPA</span>
+                  <span class="text-xl font-bold text-slate-900">3.39 / 4.0</span>
+                </div>
+                <i class="fas fa-graduation-cap text-slate-300"></i>
+              </div>
+              <div class="bg-white p-4 rounded-xl flex justify-between items-center w-full">
+                <div>
+                  <span class="block text-[13px] font-semibold text-slate-600 mb-1"
+                    data-i18n="experience.edu_toeic_lr_label">TOEIC LR</span>
+                  <span class="text-xl font-bold text-slate-900">930 / 990</span>
+                </div>
+                <i class="fas fa-award text-slate-300"></i>
+              </div>
+              <div class="bg-white p-4 rounded-xl flex justify-between items-center w-full">
+                <div>
+                  <span class="block text-[13px] font-semibold text-slate-600 mb-1"
+                    data-i18n="experience.edu_toeic_sw_label">TOEIC SW</span>
+                  <span class="text-xl font-bold text-slate-900">310 / 400</span>
+                </div>
+                <i class="fas fa-award text-slate-300"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Technical Skills Section: Composed Architecture Matrix -->
+    <section id="skills" class="w-full py-16" data-reveal>
+
+      <!-- Top Section Marker -->
+      <div class="w-full flex justify-between items-baseline mb-8">
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" style="font-family: 'Unbounded', sans-serif;"
+          data-i18n="skills.section_title">
+          Technical Skills
+        </h2>
+        <span class="text-[13px] text-slate-500 font-medium text-right" data-i18n="skills.section_badge">Engineering
+          Stack</span>
+      </div>
+
+      <div class="w-full space-y-6">
+
+        <!-- Band 1: Backend Architecture & Core Languages -->
+        <div class="w-full bg-slate-100/80 p-6 sm:p-8 rounded-2xl">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 w-full">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900" data-i18n="skills.band1_title">Backend Systems & Languages
+              </h3>
+              <p class="text-base text-slate-600" data-i18n="skills.band1_desc">Enterprise service development, scalable
+                databases, and concurrent
+                pipelines.</p>
+            </div>
+            <span class="text-base font-semibold text-slate-700 bg-white px-3.5 py-1.5 rounded-lg w-fit shrink-0">
+              Go · Java · Spring Boot · SQL
+            </span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full">
+            <span class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">Go</span>
+            <span class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">Java</span>
+            <span class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">Spring
+              Boot</span>
+            <span
+              class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">PostgreSQL</span>
+            <span class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">SQL
+              Server</span>
+            <span class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">ASP.NET
+              Core</span>
+            <span class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">RESTful
+              APIs</span>
+            <span class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">RBAC
+              Auth</span>
+          </div>
+        </div>
+
+        <!-- Band 2: Frontend Engineering & Web Platforms -->
+        <div class="w-full bg-slate-100/80 p-6 sm:p-8 rounded-2xl">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 w-full">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900" data-i18n="skills.band2_title">Frontend Engineering &
+                Platforms</h3>
+              <p class="text-base text-slate-600" data-i18n="skills.band2_desc">Component architectures, reactive
+                states, and responsive styling
+                systems.</p>
+            </div>
+            <span class="text-base font-semibold text-slate-700 bg-white px-3.5 py-1.5 rounded-lg w-fit shrink-0">
+              Angular · React · TypeScript · Next.js
+            </span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full">
+            <span
+              class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">Angular</span>
+            <span
+              class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">TypeScript</span>
+            <span
+              class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">JavaScript</span>
+            <span
+              class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">React</span>
+            <span
+              class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">Next.js</span>
+            <span
+              class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">PrimeNG</span>
+            <span class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">Tailwind
+              CSS</span>
+            <span class="px-4 py-2.5 bg-white text-slate-800 rounded-lg text-base font-semibold text-center">Bootstrap
+              5</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Featured Projects Section with Real Visual Imagery -->
+    <section id="projects" class="w-full py-16" data-reveal>
+
+      <!-- Top Section Marker -->
+      <div class="w-full flex justify-between items-baseline mb-10">
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" style="font-family: 'Unbounded', sans-serif;"
+          data-i18n="projects.section_title">
+          Featured Projects
+        </h2>
+        <span class="text-[13px] text-slate-500 font-medium text-right" data-i18n="projects.section_badge">Production
+          Systems</span>
+      </div>
+
+      <div class="w-full space-y-12">
+
+        <!-- Origin leather craft -->
+        <article class="w-full bg-slate-100/80 rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row gap-8 items-center"
+          data-reveal>
+          <div class="w-full lg:w-1/2">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-[13px] font-bold text-slate-900 uppercase bg-white px-3 py-1 rounded-md"
+                data-i18n="projects.proj1_badge">E-commerce</span>
+              <span class="text-[13px] font-semibold text-slate-600">Angular · NET Core </span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3" data-i18n="projects.proj1_title">Origin Leather Craft
+            </h3>
+            <p class="text-slate-700 text-base mb-6 leading-relaxed" data-i18n="projects.proj1_desc">
+              Origin Leather Craft is a comprehensive e-commerce platform built with Angular and Spring Boot, designed
+              to showcase and sell high-quality leather products. The system features a modern, responsive user
+              interface with detailed product displays, shopping cart functionality, and secure checkout processes.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">Angular</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">ASP.NET</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">SQL Server</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">Kafka</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">MinIO</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">Docker</span>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl bg-white">
+            <img src="./assets/img/Origin_Leather_Craft.png" alt="Origin Leather Craft"
+              class="w-full h-auto object-cover rounded-2xl hover:scale-105 transition-transform duration-500"
+              loading="lazy">
+          </div>
+        </article>
+
+        <!-- Case 2: Pilot Management System with Screenshot 3 -->
+        <article
+          class="w-full bg-slate-100/80 rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row-reverse gap-8 items-center"
+          data-reveal>
+          <div class="w-full lg:w-1/2">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-[13px] font-bold text-slate-900 uppercase bg-white px-3 py-1 rounded-md"
+                data-i18n="projects.proj2_badge">Maritime
+                Systems</span>
+              <span class="text-[13px] font-semibold text-slate-600">Angular · Go</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3" data-i18n="projects.proj2_title">Pilot Management System
+            </h3>
+            <p class="text-slate-700 text-base mb-6 leading-relaxed" data-i18n="projects.proj2_desc">
+              Engineered critical ship plan statistics and pilot coordination platform. Integrated SmartCA digital
+              cryptographic signatures to verify document authenticity and enforce regulatory compliance across maritime
+              port operations.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">Go</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">Angular</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">SQL Server</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">SmartCA
+                Security</span>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl bg-white">
+            <img src="./assets/img/PMS.jpg" alt="Pilot Management System Examination and Form Generator"
+              class="w-full h-auto object-cover rounded-2xl hover:scale-105 transition-transform duration-500"
+              loading="lazy">
+          </div>
+        </article>
+
+        <!-- Case 3: Human Resources Management -->
+        <article class="w-full bg-slate-100/80 rounded-3xl p-6 sm:p-10 flex flex-col lg:flex-row gap-8 items-center"
+          data-reveal>
+          <div class="w-full lg:w-1/2">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-[13px] font-bold text-slate-900 uppercase bg-white px-3 py-1 rounded-md"
+                data-i18n="projects.proj3_badge">Human
+                Resources</span>
+              <span class="text-[13px] font-semibold text-slate-600">Angular · Go</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3" data-i18n="projects.proj3_title">Human Resources
+              Management</h3>
+            <p class="text-slate-700 text-base mb-6 leading-relaxed" data-i18n="projects.proj3_desc">
+              Integrated payroll, leave management, and recruitment workflows using Angular, Go, and SQL Server.
+              Implemented role-based access control (RBAC) and audit trails to ensure secure and transparent human
+              resource operations.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">Angular</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">Go</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded-md text-[13px] font-semibold">SQL Server</span>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl bg-white">
+            <img src="./assets/img/HRM.jpg" alt="Course and Curriculum Management Dashboard"
+              class="w-full h-auto object-cover rounded-2xl hover:scale-105 transition-transform duration-500"
+              loading="lazy">
+          </div>
+        </article>
+
+        <!-- 2-Column Row for FTI Portal & Social Media Platform -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <!-- Project 4: FTI Sai Gon Official Portal with Screenshot 4 -->
+          <article class="w-full bg-slate-100/80 p-6 sm:p-8 rounded-3xl flex flex-col justify-between" data-reveal>
+            <div>
+              <div class="flex items-center justify-between mb-3 w-full">
+                <span class="text-[13px] font-bold text-slate-900 uppercase bg-white px-3 py-1 rounded"
+                  data-i18n="projects.proj4_badge">Corporate
+                  Portal</span>
+                <span class="text-[13px] font-semibold text-slate-600">React · Go</span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 mb-3" data-i18n="projects.proj4_title">FTI Website</h3>
+              <p class="text-slate-700 text-base mb-6 leading-relaxed" data-i18n="projects.proj4_desc">
+                Official enterprise website for real-time article publishing and search engine
+                optimization (SEO).
+              </p>
+            </div>
+            <div class="overflow-hidden rounded-xl bg-white mb-6 w-full">
+              <img src="./assets/img/FTI_website.png" alt="FTI Website" class="w-full h-auto object-cover rounded-xl"
+                loading="lazy">
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+              <span class="px-3 py-1 bg-white text-slate-700 rounded text-[13px] font-semibold">React</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded text-[13px] font-semibold">Go Backend</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded text-[13px] font-semibold">CMS Engine</span>
+            </div>
+          </article>
+
+          <!-- Project 5: Social Media Ninstagram -->
+          <article class="w-full bg-slate-100/80 p-6 sm:p-8 rounded-3xl flex flex-col justify-between" data-reveal>
+            <div>
+              <div class="flex items-center justify-between mb-3 w-full">
+                <span class="text-[13px] font-bold text-slate-900 uppercase bg-white px-3 py-1 rounded"
+                  data-i18n="projects.proj5_badge">Social
+                  Platform</span>
+                <span class="text-[13px] font-semibold text-slate-600"> Next.js · .NET Core</span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 mb-3" data-i18n="projects.proj5_title">Ninstagram Social Web
+              </h3>
+              <p class="text-slate-700 text-base mb-6 leading-relaxed" data-i18n="projects.proj5_desc">
+                Designed database with Entity Framework. Engineered authentication infrastructure with brute-force
+                lockouts, token refresh, and mutual follower recommendation algorithms.
+              </p>
+            </div>
+            <div class="overflow-hidden rounded-xl bg-white mb-6 w-full">
+              <img src="./assets/img/Ninstgram.jpeg" alt="Ninstagram Social Web"
+                class="w-full h-auto object-cover rounded-xl" loading="lazy">
+            </div>
+            <div class="flex flex-wrap gap-2 w-full">
+              <span class="px-3 py-1 bg-white text-slate-700 rounded text-[13px] font-semibold">.NET Core</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded text-[13px] font-semibold">Next.js</span>
+              <span class="px-3 py-1 bg-white text-slate-700 rounded text-[13px] font-semibold">Entity Framework</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Call to Action Band -->
+    <section class="w-full py-16" data-reveal>
+      <div class="w-full bg-slate-900 text-white rounded-3xl p-10 sm:p-14 text-center flex flex-col items-center">
+        <!-- Short 2-word title that never wraps past two lines on any viewport -->
+        <h2 class="text-3xl font-extrabold uppercase tracking-tight mb-4" style="font-family: 'Unbounded', sans-serif;"
+          data-i18n="cta.title">
+          Let's Connect
+        </h2>
+        <p class="text-slate-300 text-base max-w-xl mb-8 leading-relaxed" data-i18n="cta.desc">
+          Open for full-stack engineering opportunities, distributed backend systems development, and high-performance
+          enterprise applications.
+        </p>
+        <div class="w-full flex flex-wrap justify-center gap-4">
           <a href="mailto:hoanghuynguyen711@gmail.com"
-            class="flex items-center gap-2 px-5 py-2.5 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-all font-medium">
-            <i class="far fa-envelope"></i> Email
+            class="px-8 py-3.5 bg-white text-slate-950 font-bold rounded-xl hover:bg-slate-200 btn-press text-base"
+            data-i18n="cta.btn_email">
+            Get in Touch via Email
           </a>
-          <a href="tel:0961814002"
-            class="flex items-center gap-2 px-5 py-2.5 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-all font-medium">
-            <i class="fas fa-phone"></i> Contact
+          <a href="https://github.com/hnoga-n" target="_blank"
+            class="px-8 py-3.5 bg-slate-800 text-white font-bold rounded-xl hover:bg-slate-700 btn-press text-base"
+            data-i18n="cta.btn_github">
+            Visit GitHub
           </a>
         </div>
       </div>
-
-      <div class="w-40 h-40 md:w-48 md:h-48 shrink-0 relative">
-        <div class="absolute inset-0 bg-primary/10 rounded-full blur-xl"></div>
-        <img src="./assets/img/avatar.png" alt="Nguyen Huy Hoang"
-          class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-lg">
-      </div>
     </section>
-
-    <!-- Education Section -->
-    <section id="education" class="mb-20">
-      <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-        <span class="w-8 h-[2px] bg-primary"></span> Education
-      </h3>
-      <div
-        class="bg-white rounded-xl p-6 shadow-sm border-l-2 border-l-primary border-y border-r border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center transition-all">
-        <div>
-          <div class="flex items-center gap-3 mb-1">
-            <i class="fas fa-graduation-cap text-primary text-xl"></i>
-            <h4 class="font-bold text-lg text-slate-900">Sai Gon University</h4>
-          </div>
-          <p class="text-slate-600 font-medium pl-8">Bachelor of Engineering in Information Technology</p>
-        </div>
-        <div class="mt-4 md:mt-0 text-right">
-          <span class="block text-primary font-bold text-xl">GPA: 3.34/4</span>
-          <span class="text-sm text-slate-500 font-medium">Sep 2021 -- Jan 2026</span>
-        </div>
-      </div>
-
-      <div class="mt-4 ml-2 flex flex-wrap gap-4 text-sm font-medium text-slate-600">
-        <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-slate-100">
-          <i class="fas fa-star text-yellow-500"></i>
-          <span>TOEIC LR: <strong class="text-slate-900">930/990</strong></span>
-        </div>
-        <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-slate-100">
-          <i class="fas fa-star text-yellow-500"></i>
-          <span>TOEIC SW: <strong class="text-slate-900">310/400</strong></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="mb-20">
-      <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-        <span class="w-8 h-[2px] bg-primary"></span> Technical Skills
-      </h3>
-
-      <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-        <div class="space-y-6">
-          <div>
-            <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Languages</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-yellow-50 text-yellow-700 rounded-md text-sm font-medium">JavaScript</span>
-              <span class="px-3 py-1 bg-orange-50 text-orange-700 rounded-md text-sm font-medium">Java</span>
-              <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-md text-sm font-medium">C#</span>
-              <span class="px-3 py-1 bg-cyan-50 text-cyan-700 rounded-md text-sm font-medium">Go</span>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Frameworks & Tools</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-red-50 text-red-700 rounded-md text-sm font-medium">Angular</span>
-              <span class="px-3 py-1 bg-green-50 text-green-700 rounded-md text-sm font-medium">Spring Boot</span>
-              <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">Next.js</span>
-              <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-md text-sm font-medium">ASP.NET Core</span>
-              <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-sm font-medium">React</span>
-              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-md text-sm font-medium">Bootstrap 5</span>
-              <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-md text-sm font-medium">PrimeNG</span>
-              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">SQL Server</span>
-              <span class="px-3 py-1 bg-blue-50 text-blue-800 rounded-md text-sm font-medium">PostgreSQL</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="mb-20">
-      <h3 class="text-xl font-bold mb-8 flex items-center gap-2">
-        <span class="w-8 h-[2px] bg-primary"></span> Work Experience
-      </h3>
-
-      <div class="relative pl-8 border-l-2 border-slate-200">
-        <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1.5 ring-4 ring-white"></div>
-
-        <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-          <h4 class="text-lg font-bold text-slate-900">Software Engineer</h4>
-          <span class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">Jun
-            2025 – Present</span>
-        </div>
-        <h5 class="text-primary font-medium mb-4">FTI Joint Stock Co.</h5>
-
-        <ul class="list-disc list-inside space-y-2 text-slate-600 marker:text-primary">
-          <li>Develop backend services using <strong>Spring Boot</strong> focus on performance and scalability.</li>
-          <li>Build modular user interfaces using <strong>Angular</strong>, applying component-based architecture.</li>
-          <li>Maintain high request volume systems and improve user experience in enterprise systems.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="mb-20">
-      <h3 class="text-xl font-bold mb-8 flex items-center gap-2">
-        <span class="w-8 h-[2px] bg-primary"></span> Featured Projects
-      </h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <!-- Project 1 -->
-        <div
-          class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-all hover:border-primary/30">
-          <div class="flex justify-between items-start mb-4">
-            <h4 class="font-bold text-lg group-hover:text-primary transition-colors">Pilot Management System</h4>
-            <span class="text-xs font-semibold bg-red-50 text-red-600 px-2 py-1 rounded">Angular & Go</span>
-          </div>
-          <p class="text-slate-600 text-sm mb-4">
-            Integrated SmartCA for digital signatures ensuring data integrity. Implemented efficient ship plan
-            statistics using optimized SQL multi-table queries.
-          </p>
-          <div class="flex gap-2 text-xs text-slate-400 font-mono">
-            <span>#PrimeNG</span>
-            <span>#SQL Server</span>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div
-          class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-all hover:border-primary/30">
-          <div class="flex justify-between items-start mb-4">
-            <h4 class="font-bold text-lg group-hover:text-primary transition-colors">Central Distribution System</h4>
-            <span class="text-xs font-semibold bg-green-50 text-green-600 px-2 py-1 rounded">Spring & Angular</span>
-          </div>
-          <p class="text-slate-600 text-sm mb-4">
-            Automated warehouse distribution system. Implemented fine-grained Role-Based Access Control (RBAC) and
-            high-security data integrity mechanisms.
-          </p>
-          <div class="flex gap-2 text-xs text-slate-400 font-mono">
-            <span>#PostgreSQL</span>
-            <span>#Automation</span>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div
-          class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-all hover:border-primary/30">
-          <div class="flex justify-between items-start mb-4">
-            <h4 class="font-bold text-lg group-hover:text-primary transition-colors">FTI Sai Gon Website</h4>
-            <span class="text-xs font-semibold bg-blue-50 text-blue-600 px-2 py-1 rounded">React & Go</span>
-          </div>
-          <p class="text-slate-600 text-sm mb-4">
-            Official company website with CMS for dynamic content. Optimized SEO for search ranking and implemented
-            multilingual architecture.
-          </p>
-          <div class="flex gap-2 text-xs text-slate-400 font-mono">
-            <span>#CMS</span>
-            <span>#SEO</span>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div
-          class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-all hover:border-primary/30">
-          <div class="flex justify-between items-start mb-4">
-            <h4 class="font-bold text-lg group-hover:text-primary transition-colors">Social Media Ninstagram</h4>
-            <div class="flex gap-2">
-              <a href="https://github.com/vihao1802/Social-Media-Server.git" target="_blank"
-                class="text-slate-400 hover:text-slate-800"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <p class="text-slate-600 text-sm mb-4">
-            Designed database with Entity Framework. Built Auth system with account locking/recovery. Recommend friends
-            based on mutual followers.
-          </p>
-          <div class="pt-3 border-t border-slate-50 mt-auto">
-            <span class="text-xs bg-purple-50 text-purple-600 px-2 py-1 rounded">.NET Core</span>
-            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded ml-1">Next.js</span>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div
-          class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-all hover:border-primary/30">
-          <div class="flex justify-between items-start mb-4">
-            <h4 class="font-bold text-lg group-hover:text-primary transition-colors">Eclo Website</h4>
-            <div class="flex gap-2">
-              <a href="https://github.com/hnoga-n/follio.git" target="_blank"
-                class="text-slate-400 hover:text-slate-800"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <p class="text-slate-600 text-sm mb-4">
-            Image upload gallery and Drag-and-drop CMS allowing administrators to manage website content dynamically.
-          </p>
-          <div class="pt-3 border-t border-slate-50 mt-auto">
-            <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-1 rounded">PHP</span>
-            <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-1 rounded ml-1">Bootstrap 5</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
 
   </main>
 
-  <footer class="bg-white border-t border-slate-200 py-8 text-center text-slate-500 text-sm">
-    <p>&copy; 2026 Nguyen Huy Hoang. All rights reserved.</p>
+  <!-- Footer: The Name as Monument Closes -->
+  <footer class="w-full bg-slate-100 py-16">
+    <div class="w-full max-w-5xl mx-auto px-6">
+
+      <div class="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-12">
+        <div>
+          <span
+            class="block text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-slate-900 leading-none"
+            style="font-family: 'Unbounded', sans-serif;">
+            HNOGA
+          </span>
+          <p class="mt-4 text-slate-600 text-base" data-i18n="footer.subtitle">
+            Nguyen Huy Hoang · Software Engineer based in Ho Chi Minh City
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-6 text-base font-medium text-slate-700">
+          <a href="https://github.com/hnoga-n" target="_blank" class="hover:text-slate-950 transition-colors"
+            data-i18n="footer.link_github">GitHub</a>
+          <a href="mailto:hoanghuynguyen711@gmail.com" class="hover:text-slate-950 transition-colors"
+            data-i18n="footer.link_email">Email</a>
+          <a href="tel:0961814002" class="hover:text-slate-950 transition-colors"
+            data-i18n="footer.link_phone">Phone</a>
+          <a href="#about" class="hover:text-slate-950 transition-colors" data-i18n="footer.link_back_top">Back to Top
+            ↑</a>
+        </div>
+      </div>
+
+      <div class="w-full flex justify-between items-center text-base text-slate-600">
+        <p data-i18n="footer.rights">&copy; 2026 Nguyen Huy Hoang. All rights reserved.</p>
+        <p class="text-right" data-i18n="footer.role">Full-stack Software Engineer</p>
+      </div>
+
+    </div>
   </footer>
+
+  <!-- Multilingual Scripts (Dictionary & i18n Engine) -->
+  <script src="./assets/js/translations.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+
+  <!-- Interactive Scripts (Zero-dependency vanilla JS) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile menu toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      // 2. Scroll Progress Bar
+      const progressBar = document.getElementById('scroll-progress');
+      const updateProgress = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+        if (progressBar) {
+          progressBar.style.transform = `scaleX(${progress})`;
+        }
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      // 3. Staggered Section Reveal (Intersection Observer)
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const revealElements = document.querySelectorAll('[data-reveal]');
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-in');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealElements.forEach((el) => revealObserver.observe(el));
+      } else {
+        // Fallback for reduced motion or legacy browsers
+        document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-in'));
+      }
+    });
+  </script>
 
 </body>
 

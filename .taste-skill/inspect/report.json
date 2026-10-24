@@ -1,0 +1,1946 @@
+{
+ "url": "index.html",
+ "at": "2026-10-24T11:00:43.939Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 6,
+   "filled": [
+    0.32,
+    0.37,
+    0.43,
+    0.53,
+    0.62,
+    0.54
+   ],
+   "motion": {
+    "elements": 31,
+    "css": 4,
+    "transitions": 11,
+    "scripted": 16,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 5548,
+     "screens": 6.2,
+     "words": 486,
+     "img": 6,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 6,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "avatar.png",
+      "classin1.png",
+      "classin3.png",
+      "classin2.png",
+      "classin4.png",
+      "classin5.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "NGUYEN HUY HOANG",
+     "words": 3,
+     "chars": 16,
+     "lines": 2,
+     "size": 84,
+     "vw": 5.8,
+     "font": "Unbounded",
+     "weight": 800,
+     "tracking": -0.025,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.47,
+     "top": 160,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "NGUYEN HUY HOANG",
+     "words": 3,
+     "lines": 2,
+     "size": 84,
+     "font": "Unbounded"
+    },
+    "headings": [
+     {
+      "text": "NGUYEN HUY HOANG",
+      "words": 3,
+      "chars": 16,
+      "lines": 2,
+      "size": 84,
+      "vw": 5.8,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 160,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Career Path",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.15,
+      "top": 1241,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Technical Skills",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 2025,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Featured Projects",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.23,
+      "top": 2725,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "LET'S CONNECT",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.21,
+      "top": 4844,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "HNOGA",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 60,
+      "vw": 4.2,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 5312,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 6,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Onest",
+       "share": 0.98,
+       "mono": false
+      },
+      {
+       "family": "Unbounded",
+       "share": 0.02,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      16,
+      20,
+      24,
+      30,
+      60,
+      84
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Onest",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.3
+     },
+     "measureChars": 54,
+     "max": {
+      "size": 84,
+      "vw": 5.8,
+      "font": "Unbounded",
+      "text": "Nguyen"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0.09,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafaf9",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.09,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f1f5f9",
+       "top": 5248,
+       "hsl": {
+        "h": 210,
+        "s": 0.4,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#334155",
+       "share": 0.47
+      },
+      {
+       "color": "#475569",
+       "share": 0.23
+      },
+      {
+       "color": "#0f172a",
+       "share": 0.12
+      },
+      {
+       "color": "#1e293b",
+       "share": 0.06
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.05
+      }
+     ],
+     "button": {
+      "bg": "#0f172a",
+      "hsl": {
+       "h": 222,
+       "s": 0.47,
+       "l": 0.11
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 4,
+     "radius": 8,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Resume PDF",
+      "GitHub Profile",
+      "Send Email",
+      "0961 814 002"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 23,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 6,
+     "mediaRadius": 16,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 2801
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 6,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "onest",
+     "unbounded",
+     "font awesome 6 brands",
+     "font awesome 6 free"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 5548,
+    "margins": {
+     "left": 232,
+     "right": 232
+    },
+    "sections": [
+     {
+      "sel": "section#about.w-full.pt-4",
+      "tag": "section",
+      "top": 128,
+      "height": 685,
+      "words": 78,
+      "media": 1,
+      "middle": 24,
+      "heading": {
+       "text": "Nguyen",
+       "size": 84,
+       "tag": "h1"
+      },
+      "left": 232,
+      "right": 232,
+      "textLeft": 232,
+      "textRight": 404,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.w-full.py-16",
+      "tag": "section",
+      "top": 813,
+      "height": 365,
+      "words": 19,
+      "media": 0,
+      "middle": 23,
+      "heading": null,
+      "left": 296,
+      "right": 296,
+      "textLeft": 296,
+      "textRight": 296,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experience.w-full.py-16",
+      "tag": "section",
+      "top": 1177,
+      "height": 784,
+      "words": 111,
+      "media": 0,
+      "middle": 84,
+      "heading": {
+       "text": "Career Path",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 232,
+      "right": 232,
+      "textLeft": 232,
+      "textRight": 232,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#skills.w-full.py-16",
+      "tag": "section",
+      "top": 1961,
+      "height": 700,
+      "words": 70,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Technical Skills",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 232,
+      "right": 232,
+      "textLeft": 232,
+      "textRight": 232,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#projects.w-full.py-16",
+      "tag": "section",
+      "top": 2661,
+      "height": 2064,
+      "words": 226,
+      "media": 5,
+      "middle": 32,
+      "heading": {
+       "text": "Featured Projects",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 232,
+      "right": 232,
+      "textLeft": 232,
+      "textRight": 232,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.w-full.py-16",
+      "tag": "section",
+      "top": 4724,
+      "height": 428,
+      "words": 29,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Let's Connect",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 440,
+      "right": 440,
+      "textLeft": 440,
+      "textRight": 440,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.w-full.bg-slate-100",
+      "tag": "footer",
+      "top": 5248,
+      "height": 300,
+      "words": 31,
+      "media": 0,
+      "middle": 164,
+      "heading": {
+       "text": "HNOGA",
+       "size": 60,
+       "tag": "span"
+      },
+      "left": 232,
+      "right": 232,
+      "textLeft": 232,
+      "textRight": 232,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 5020,
+      "height": 284
+     }
+    ],
+    "h1s": [
+     {
+      "text": "NGUYEN HUY HOANG",
+      "size": 84,
+      "top": 160,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 264,
+      "n": 10
+     },
+     {
+      "x": 232,
+      "n": 8
+     },
+     {
+      "x": 605,
+      "n": 2
+     },
+     {
+      "x": 736,
+      "n": 2
+     },
+     {
+      "x": 768,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 24,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.13,
+    "voidBox": {
+     "x": 0,
+     "y": 780,
+     "w": 1440,
+     "h": 120
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 6,
+   "filled": [
+    0.43,
+    0.69,
+    0.6,
+    0.9,
+    0.84,
+    0.77
+   ],
+   "motion": {
+    "elements": 31,
+    "css": 4,
+    "transitions": 11,
+    "scripted": 16,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 6634,
+     "screens": 6.5,
+     "words": 486,
+     "img": 6,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 6,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "avatar.png",
+      "classin1.png",
+      "classin3.png",
+      "classin2.png",
+      "classin4.png",
+      "classin5.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "NGUYEN HUY HOANG",
+     "words": 3,
+     "chars": 16,
+     "lines": 2,
+     "size": 48,
+     "vw": 6.3,
+     "font": "Unbounded",
+     "weight": 800,
+     "tracking": -0.025,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.94,
+     "top": 424,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "NGUYEN HUY HOANG",
+     "words": 3,
+     "lines": 2,
+     "size": 48,
+     "font": "Unbounded"
+    },
+    "headings": [
+     {
+      "text": "NGUYEN HUY HOANG",
+      "words": 3,
+      "chars": 16,
+      "lines": 2,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 424,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Career Path",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 1434,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Technical Skills",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 2301,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Featured Projects",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 3049,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "LET'S CONNECT",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.39,
+      "top": 5918,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "HNOGA",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.55,
+      "top": 6386,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 6,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Onest",
+       "share": 0.98,
+       "mono": false
+      },
+      {
+       "family": "Unbounded",
+       "share": 0.02,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      16,
+      20,
+      24,
+      30,
+      48
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Onest",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.3
+     },
+     "measureChars": 80,
+     "max": {
+      "size": 48,
+      "vw": 6.3,
+      "font": "Unbounded",
+      "text": "Nguyen"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0.09,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafaf9",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.09,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f1f5f9",
+       "top": 6322,
+       "hsl": {
+        "h": 210,
+        "s": 0.4,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#334155",
+       "share": 0.47
+      },
+      {
+       "color": "#475569",
+       "share": 0.23
+      },
+      {
+       "color": "#0f172a",
+       "share": 0.12
+      },
+      {
+       "color": "#1e293b",
+       "share": 0.06
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.05
+      }
+     ],
+     "button": {
+      "bg": "#0f172a",
+      "hsl": {
+       "h": 222,
+       "s": 0.47,
+       "l": 0.11
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 4,
+     "radius": 8,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Resume PDF",
+      "GitHub Profile",
+      "Send Email",
+      "0961 814 002"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 23,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 5,
+     "mediaRadius": 16,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 6,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "onest",
+     "unbounded",
+     "font awesome 6 brands",
+     "font awesome 6 free"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 6634,
+    "margins": {
+     "left": 24,
+     "right": 24
+    },
+    "sections": [
+     {
+      "sel": "section#about.w-full.pt-4",
+      "tag": "section",
+      "top": 128,
+      "height": 877,
+      "words": 78,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Nguyen",
+       "size": 48,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 27,
+      "textLeft": 24,
+      "textRight": 27,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.w-full.py-16",
+      "tag": "section",
+      "top": 1005,
+      "height": 365,
+      "words": 19,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 72,
+      "right": 72,
+      "textLeft": 72,
+      "textRight": 72,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experience.w-full.py-16",
+      "tag": "section",
+      "top": 1370,
+      "height": 868,
+      "words": 111,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Career Path",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#skills.w-full.py-16",
+      "tag": "section",
+      "top": 2237,
+      "height": 748,
+      "words": 70,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Technical Skills",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#projects.w-full.py-16",
+      "tag": "section",
+      "top": 2985,
+      "height": 2813,
+      "words": 226,
+      "media": 5,
+      "middle": 0,
+      "heading": {
+       "text": "Featured Projects",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.w-full.py-16",
+      "tag": "section",
+      "top": 5798,
+      "height": 428,
+      "words": 29,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Let's Connect",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 104,
+      "right": 104,
+      "textLeft": 104,
+      "textRight": 104,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.w-full.bg-slate-100",
+      "tag": "footer",
+      "top": 6322,
+      "height": 312,
+      "words": 31,
+      "media": 0,
+      "middle": 60,
+      "heading": {
+       "text": "HNOGA",
+       "size": 48,
+       "tag": "span"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "NGUYEN HUY HOANG",
+      "size": 48,
+      "top": 424,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 56,
+      "n": 14
+     },
+     {
+      "x": 24,
+      "n": 8
+     },
+     {
+      "x": 432,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 24,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    0.45,
+    0.5,
+    0.56,
+    0.65,
+    0.81,
+    0.67,
+    0.89,
+    0.84,
+    0.74,
+    0.76
+   ],
+   "motion": {
+    "elements": 31,
+    "css": 4,
+    "transitions": 11,
+    "scripted": 16,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 8641,
+     "screens": 10.2,
+     "words": 480,
+     "img": 6,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 6,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "avatar.png",
+      "classin1.png",
+      "classin3.png",
+      "classin2.png",
+      "classin4.png",
+      "classin5.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "NGUYEN HUY HOANG",
+     "words": 3,
+     "chars": 16,
+     "lines": 2,
+     "size": 36,
+     "vw": 9.2,
+     "font": "Unbounded",
+     "weight": 800,
+     "tracking": -0.025,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.88,
+     "top": 344,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "NGUYEN HUY HOANG",
+     "words": 3,
+     "lines": 2,
+     "size": 36,
+     "font": "Unbounded"
+    },
+    "headings": [
+     {
+      "text": "NGUYEN HUY HOANG",
+      "words": 3,
+      "chars": 16,
+      "lines": 2,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 344,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Career Path",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.57,
+      "top": 1879,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Technical Skills",
+      "words": 2,
+      "chars": 16,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.63,
+      "top": 3132,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Featured Projects",
+      "words": 2,
+      "chars": 17,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.64,
+      "top": 4316,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "ClassIn LMS Platform",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Onest",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 4511,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Pilot Management System",
+      "words": 3,
+      "chars": 23,
+      "lines": 2,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Onest",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 5125,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Central Distribution System",
+      "words": 3,
+      "chars": 27,
+      "lines": 2,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Onest",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 5791,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "FTI Corporate Portal",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Onest",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 6412,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Ninstagram Social Web",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Onest",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 7055,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "LET'S CONNECT",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.67,
+      "top": 7667,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "HNOGA",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Unbounded",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 8301,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 11,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Onest",
+       "share": 0.98,
+       "mono": false
+      },
+      {
+       "family": "Unbounded",
+       "share": 0.02,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      16,
+      20,
+      24,
+      30,
+      36
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Onest",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.3
+     },
+     "measureChars": 37,
+     "max": {
+      "size": 36,
+      "vw": 9.2,
+      "font": "Unbounded",
+      "text": "Nguyen"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0.09,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafaf9",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.09,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 1449,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#f1f5f9",
+       "top": 8237,
+       "hsl": {
+        "h": 210,
+        "s": 0.4,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#334155",
+       "share": 0.48
+      },
+      {
+       "color": "#475569",
+       "share": 0.22
+      },
+      {
+       "color": "#0f172a",
+       "share": 0.12
+      },
+      {
+       "color": "#1e293b",
+       "share": 0.06
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.05
+      }
+     ],
+     "button": {
+      "bg": "#e2e8f0",
+      "hsl": {
+       "h": 214,
+       "s": 0.32,
+       "l": 0.91
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": 8,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "GitHub Profile",
+      "Send Email",
+      "0961 814 002"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 23,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 12,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 4428
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.11
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 84,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "onest",
+     "unbounded",
+     "font awesome 6 brands",
+     "font awesome 6 free"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 8641,
+    "margins": {
+     "left": 24,
+     "right": 24
+    },
+    "sections": [
+     {
+      "sel": "section#about.w-full.pt-4",
+      "tag": "section",
+      "top": 96,
+      "height": 1289,
+      "words": 78,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Nguyen",
+       "size": 36,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 26,
+      "textLeft": 24,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.w-full.py-16",
+      "tag": "section",
+      "top": 1385,
+      "height": 431,
+      "words": 19,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 56,
+      "right": 56,
+      "textLeft": 56,
+      "textRight": 56,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#experience.w-full.py-16",
+      "tag": "section",
+      "top": 1815,
+      "height": 1253,
+      "words": 111,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Career Path",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#skills.w-full.py-16",
+      "tag": "section",
+      "top": 3068,
+      "height": 1184,
+      "words": 70,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Technical Skills",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#projects.w-full.py-16",
+      "tag": "section",
+      "top": 4252,
+      "height": 3311,
+      "words": 226,
+      "media": 5,
+      "middle": 0,
+      "heading": {
+       "text": "Featured Projects",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.w-full.py-16",
+      "tag": "section",
+      "top": 7563,
+      "height": 578,
+      "words": 29,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Let's Connect",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 67,
+      "right": 67,
+      "textLeft": 67,
+      "textRight": 67,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.w-full.bg-slate-100",
+      "tag": "footer",
+      "top": 8237,
+      "height": 404,
+      "words": 31,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "HNOGA",
+       "size": 36,
+       "tag": "span"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 8024,
+      "height": 268
+     }
+    ],
+    "h1s": [
+     {
+      "text": "NGUYEN HUY HOANG",
+      "size": 36,
+      "top": 344,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 48,
+      "n": 16
+     },
+     {
+      "x": 24,
+      "n": 8
+     }
+    ],
+    "leftBlocks": 24,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "D:\\Code\\portfolio-hnoga\\.taste-skill\\inspect\\desktop-fold.jpg",
+   "pages": [
+    "D:\\Code\\portfolio-hnoga\\.taste-skill\\inspect\\desktop-page-01.jpg",
+    "D:\\Code\\portfolio-hnoga\\.taste-skill\\inspect\\desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "D:\\Code\\portfolio-hnoga\\.taste-skill\\inspect\\tablet-fold.jpg",
+   "pages": [
+    "D:\\Code\\portfolio-hnoga\\.taste-skill\\inspect\\tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "D:\\Code\\portfolio-hnoga\\.taste-skill\\inspect\\mobile-fold.jpg",
+   "pages": [
+    "D:\\Code\\portfolio-hnoga\\.taste-skill\\inspect\\mobile-page-01.jpg",
+    "D:\\Code\\portfolio-hnoga\\.taste-skill\\inspect\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
